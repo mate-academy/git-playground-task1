@@ -13,10 +13,12 @@ function main() {
         return;
       }
       const note = store.add(text);
+      // Inform the user of the new note's ID, so they can delete it later if they want.
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {
+      // List all notes, showing their IDs so the user can delete them if they want.
       const notes = store.all();
       if (notes.length === 0) {
         console.log("No notes yet. Add one with: notes add <text>");

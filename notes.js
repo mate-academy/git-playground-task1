@@ -2,12 +2,12 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 
-const [command, ...rest] = process.argv.slice(2);
+const [command, ...message] = process.argv.slice(2);
 
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
+      const text = message.join(" ").trim();
       if (!text) {
         console.log("Usage: notes add <your note>");
         return;
@@ -28,7 +28,7 @@ function main() {
       break;
     }
     case "delete": {
-      const id = Number(rest[0]);
+      const id = Number(messages[0]);
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;

@@ -22,6 +22,7 @@ function main() {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
       }
+      console.log(`${notes.length} note(s):`);
       for (const note of notes) {
         console.log(`#${note.id}  ${note.text}`);
       }

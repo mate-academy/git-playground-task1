@@ -5,14 +5,14 @@
 const fs = require("fs");
 const path = require("path");
 
-const file = path.join(process.cwd(), "notes.md");
+const notesMarkdownPath = path.join(process.cwd(), "notes.md");
 
-if (!fs.existsSync(file)) {
+if (!fs.existsSync(notesMarkdownPath)) {
   console.error("FAIL  notes.md is missing. Add it with your prediction and Claude's summary, then push again.");
   process.exit(1);
 }
 
-if (fs.readFileSync(file, "utf8").trim().length === 0) {
+if (fs.readFileSync(notesMarkdownPath, "utf8").trim() === "") {
   console.error("FAIL  notes.md is empty. Add your prediction and Claude's summary, then push again.");
   process.exit(1);
 }

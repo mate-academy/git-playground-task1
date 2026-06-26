@@ -1,0 +1,2 @@
+- Updated notes.js: changed a word.
+- Tweaked config.js from memory.

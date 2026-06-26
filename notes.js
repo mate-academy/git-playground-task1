@@ -4,6 +4,10 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+function AddTwoIntegers(a, b) {
+  return a + b;
+}
+
 function main() {
   switch (command) {
     case "add": {

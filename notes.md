@@ -1,0 +1,1 @@
+I've just added a dumb functions to understand functioning of claude to use github features such as diff

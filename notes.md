@@ -1,0 +1,1 @@
+I changed 2 variable name in one file and added one more console.log in another file. Also did not fix one use of renamed variable.

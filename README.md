@@ -2,6 +2,9 @@
 
 A tiny command-line notes tool, used as the practice repo for Unit 4 (Git). The app is a safe sandbox for doing real Git work with Claude. The task below is something you run here with Claude; follow the steps and submit the link it asks for.
 
+### About this project
+This project is a minimal Node.js notes manager built to give you a realistic codebase to practice Git workflows on. It stores plain-text notes in a local JSON file and exposes simple `add`, `list`, and `delete` commands through a command-line interface. The code is intentionally small and readable — split into an entry point (`notes.js`) and a `lib/` folder for storage and configuration — so you can make meaningful edits, review diffs, and open pull requests without needing to understand a large application first.
+
 ### The app
 - `node notes.js add <text>` — add a note
 - `node notes.js list` — list all notes

@@ -1,6 +1,7 @@
 
 This program is a small application to mange notes.
 
+
 In git-playground-task1:
 
 - notes.js (modified, unstaged)

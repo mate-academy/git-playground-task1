@@ -7,6 +7,8 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
+      console.log(`Command: ${command}, Arguments: ${rest.join(" ")}`);
+
       const text = rest.join(" ").trim();
       if (!text) {
         console.log("Usage: notes add <your note>");
@@ -33,6 +35,15 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+
+    case "help": {
+      console.log("Commands:");
+      console.log("  add <text>     - Add a new note");
+      console.log("  list           - List all notes");
+      console.log("  delete <id>    - Delete a note by ID");
+      console.log("  help           - Show this help message");
+    }
+    
     default:
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);

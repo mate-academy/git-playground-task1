@@ -1,4 +1,17 @@
 #!/usr/bin/env node
+/**
+ * Notes CLI Application
+ *
+ * A command-line tool for managing simple text notes with persistent storage.
+ * Provides commands to add, list, and delete notes. Notes are stored in a
+ * local store and automatically expire after a configured session timeout.
+ *
+ * Usage:
+ *   notes add <text>     - Add a new note
+ *   notes list           - Display all notes
+ *   notes delete <id>    - Remove a note by ID
+ */
+
 const store = require("./lib/store");
 const config = require("./lib/config");
 
@@ -38,5 +51,5 @@ function main() {
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }
-
+/** Main function */
 main();

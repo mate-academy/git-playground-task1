@@ -29,13 +29,21 @@ function main() {
     }
     case "delete": {
       const id = Number(rest[0]);
+
+      if (!Number.isInteger(id) || id <= 0) {
+        console.log("Usage: notes delete <valid id>");
+        return;
+      }
+
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(
+        `(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`,
+      );
   }
 }
 

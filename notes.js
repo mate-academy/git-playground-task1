@@ -33,6 +33,12 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+    case "done": {
+      const id = Number(rest[0]);
+      const ok = store.done(id);
+      console.log(ok ? `Marked note #${id} as done` : `No note #${id} found`);
+      break;
+    }
     default:
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);

@@ -1,0 +1,1 @@
+Added a new case for getting "help".

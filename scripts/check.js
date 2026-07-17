@@ -17,4 +17,12 @@ if (fs.readFileSync(file, "utf8").trim().length === 0) {
   process.exit(1);
 }
 
+// short function to check if a string is only whitespace
+const isOnlyWhitespace = (str) => str.trim().length === 0;
+
+if (isOnlyWhitespace(fs.readFileSync(file, "utf8"))) {
+  console.error("FAIL  notes.md is only whitespace. Add your prediction and Claude's summary, then push again.");
+  process.exit(1);
+}
+
 console.log("PASS  notes.md is present and has content.");

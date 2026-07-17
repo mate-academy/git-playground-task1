@@ -1,3 +1,4 @@
+# my new comment1
 #!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");

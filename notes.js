@@ -33,8 +33,14 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+    case "get": {
+      const id = Number(rest[0]);
+      const note = store.get(id);
+      console.log(note != undefined ? `#${note.id}  ${note.text}` : `No note #${id} found`);
+      break;
+    }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | delete <id> | get <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

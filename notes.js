@@ -5,6 +5,7 @@ const config = require("./lib/config");
 const [command, ...rest] = process.argv.slice(2);
 
 function main() {
+  console.log("This is my first line in js");
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();

@@ -29,6 +29,10 @@ function main() {
     }
     case "delete": {
       const id = Number(rest[0]);
+      if (!rest[0] || Number.isNaN(id)) {
+        console.log("Usage: notes delete <id>");
+        return;
+      }
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;

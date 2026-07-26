@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-# comment
 const store = require("./lib/store");
 const config = require("./lib/config");
 

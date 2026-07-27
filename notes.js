@@ -7,19 +7,19 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
-      if (!text) {
+      const content = rest.join(" ").trim();
+      if (!content) {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
+      const note = store.add(content);
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("No notes yet. Try: notes add <text>");
         return;
       }
       for (const note of notes) {

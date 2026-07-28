@@ -4,12 +4,16 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+function formatNote(note) {
+  return `#${note.id}  ${note.text}`;
+}
+
 function main() {
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
-        console.log("Usage: notes add <your note>");
+        console.log("Usage: notes add <note text>");
         return;
       }
       const note = store.add(text);
@@ -23,7 +27,7 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        console.log(formatNote(note));
       }
       break;
     }

@@ -37,6 +37,8 @@ function main() {
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
+
+  console.log("Test app");
 }
 
 main();

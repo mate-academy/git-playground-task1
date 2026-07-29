@@ -1,15 +1,16 @@
+// TODO: Improve error handling for invalid commands.
 #!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
-function main() {
+function main() ;
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
-        console.log("Usage: notes add <your note>");
+        console.log("Usage: notes add <My name is Mud);
         return;
       }
       const note = store.add(text);

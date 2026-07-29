@@ -1,0 +1,3 @@
+I added a TODO comment in notes.js, a comment in lib/store.js, and accidentally introduced a small syntax issue.
+Claude Summary##
+Your prediction correctly caught the two intentional comments and correctly anticipated a syntax issue — but it undersells it. There are actually two independent syntax errors in notes.js (the missing brace and the unterminated string), not one, plus the shebang got displaced as a side effect of the comment placement. The file currently won't parse at all.

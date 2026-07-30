@@ -8,12 +8,11 @@ function main() {
   switch (command) {
     case "add": {
       const text1 = rest.join(" ").trim();
-      if (!text) {
+      if (!text1) {
         console.log("Usage: notes add <your note>");
         return;
-        break;
       }
-      const note = store.add(text);
+      const note = store.add(text1);
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
@@ -30,8 +29,8 @@ function main() {
     }
     case "delete": {
       const id1 = Number(rest[0]);
-      const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      const ok = store.remove(id1);
+      console.log(ok ? `Deleted note #${id1}` : `No note #${id1} found`);
       break;
     }
     default:

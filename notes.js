@@ -7,10 +7,11 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
+      const text1 = rest.join(" ").trim();
       if (!text) {
         console.log("Usage: notes add <your note>");
         return;
+        break;
       }
       const note = store.add(text);
       console.log(`Added note #${note.id}: ${note.text}`);
@@ -28,7 +29,7 @@ function main() {
       break;
     }
     case "delete": {
-      const id = Number(rest[0]);
+      const id1 = Number(rest[0]);
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;

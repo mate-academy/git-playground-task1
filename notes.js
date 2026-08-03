@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");
+const { isPalindrome } = require("./lib/palindrome");
 
 const [command, ...rest] = process.argv.slice(2);
 
@@ -33,8 +34,20 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+    case "delete-palindromes": {
+      const palindromes = store.all().filter((note) => isPalindrome(note.text));
+      for (const note of palindromes) {
+        store.remove(note.id);
+      }
+      console.log(
+        palindromes.length === 0
+          ? "No palindrome notes found"
+          : `Deleted ${palindromes.length} palindrome note(s): ${palindromes.map((n) => `#${n.id}`).join(", ")}`
+      );
+      break;
+    }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | delete <id> | delete-palindromes");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

@@ -27,6 +27,17 @@ function main() {
       }
       break;
     }
+    case "edit": {
+      const id = Number(rest[0]);
+      const text = rest.slice(1).join(" ").trim();
+      if (!text) {
+        console.log("Usage: notes edit <id> <new text>");
+        return;
+      }
+      const note = store.update(id, text);
+      console.log(note ? `Updated note #${id}` : `No note #${id} found`);
+      break;
+    }
     case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);

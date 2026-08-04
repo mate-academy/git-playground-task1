@@ -4,6 +4,7 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+// Reads the CLI command and dispatches it to the matching store operation.
 function main() {
   switch (command) {
     case "add": {
@@ -35,7 +36,7 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(`(Session locks after ${config.SESSION_LOCK_AFTER_MINUTES} minutes of inactivity.)`);
   }
 }
 

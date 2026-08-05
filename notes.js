@@ -2,12 +2,16 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 
-const [command, ...rest] = process.argv.slice(2);
+const [command, ...args] = process.argv.slice(2);
+
+function showVersion() {
+  return "Notes CLI v1.1";
+}
 
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
+      const text = args.join(" ").trim();
       if (!text) {
         console.log("Usage: notes add <your note>");
         return;
@@ -16,6 +20,7 @@ function main() {
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
+
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
@@ -27,14 +32,17 @@ function main() {
       }
       break;
     }
+
     case "delete": {
-      const id = Number(rest[0]);
+      const id = Number(args[0]);
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+
     default:
       console.log("Commands: add <text> | list | delete <id>");
+      console.log(showVersion());
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

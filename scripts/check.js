@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 
 const file = path.join(process.cwd(), "notes.md");
+const checkTime = new Date();
 
 if (!fs.existsSync(file)) {
   console.error("FAIL  notes.md is missing. Add it with your prediction and Claude's summary, then push again.");
@@ -17,4 +18,5 @@ if (fs.readFileSync(file, "utf8").trim().length === 0) {
   process.exit(1);
 }
 
+console.log(`Checked at: ${checkTime.toISOString()}`);
 console.log("PASS  notes.md is present and has content.");

@@ -1,0 +1,1 @@
+Added full address to .pages file, some minor formatting changes

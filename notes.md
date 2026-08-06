@@ -1,5 +1,6 @@
+Me:
 Added reset function to store
-
+Claude:
 What changed
 
 3 files touched, all related to a new reset command:

@@ -2,6 +2,8 @@
 // Lesson 1 check: confirms notes.md exists and isn't empty.
 // It doesn't judge the content — a reviewer does that.
 
+// delam comment
+
 const fs = require("fs");
 const path = require("path");
 

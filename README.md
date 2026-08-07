@@ -7,7 +7,7 @@ A tiny command-line notes tool, used as the practice repo for Unit 4 (Git). The 
 - `node notes.js list` — list all notes
 - `node notes.js delete <id>` — delete a note
 
-Layout: `notes.js` is the entry point, `lib/store.js` loads and saves notes (in `notes.json`), and `lib/config.js` holds app settings.
+Layout: `notes.js` is the entry point, `lib/store.js` loads and saves notes (in `notes.json`), and `lib/configuration.js` holds app settings.
 
 ### Set up
 1. Make sure you have your own copy of this repo (created from the lesson on the platform).

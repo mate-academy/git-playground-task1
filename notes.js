@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const store = require("./lib/store");
-const config = require("./lib/config");
+const configuration = require("./lib/configuration");
 
 const [command, ...rest] = process.argv.slice(2);
 
@@ -35,7 +35,7 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(`(Session locks after ${configuration.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }
 

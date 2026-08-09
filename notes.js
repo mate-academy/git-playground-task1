@@ -4,6 +4,12 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+function printNotes(notes) {
+  for (const note of notes) {
+    console.log(`#${note.id}  ${note.text}`);
+  }
+}
+
 function main() {
   switch (command) {
     case "add": {
@@ -22,9 +28,21 @@ function main() {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
       }
-      for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+      printNotes(notes);
+      break;
+    }
+    case "search": {
+      const query = rest.join(" ").trim();
+      if (!query) {
+        console.log("Usage: notes search <text>");
+        return;
       }
+      const notes = store.search(query);
+      if (notes.length === 0) {
+        console.log(`No notes match "${query}"`);
+        return;
+      }
+      printNotes(notes);
       break;
     }
     case "delete": {
@@ -34,7 +52,7 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | search <text> | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

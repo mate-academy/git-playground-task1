@@ -4,6 +4,11 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+// Formats a single note for display in `notes list`.
+function formatNote(note) {
+  return `#${note.id}  ${note.text}`;
+}
+
 function main() {
   switch (command) {
     case "add": {
@@ -23,14 +28,14 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        console.log(formatNote(note));
       }
       break;
     }
     case "delete": {
       const id = Number(rest[0]);
-      const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      const wasDeleted = store.remove(id);
+      console.log(wasDeleted ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
     default:

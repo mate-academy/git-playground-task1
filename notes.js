@@ -25,6 +25,7 @@ function main() {
       for (const note of notes) {
         console.log(`#${note.id}  ${note.text}`);
       }
+      console.log(`(${store.count()} total)`);
       break;
     }
     case "delete": {

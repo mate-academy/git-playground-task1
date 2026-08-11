@@ -9,7 +9,7 @@ function main() {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
-        console.log("Usage: notes add <your note>");
+        console.log("Usage: Notes add <your note>");
         return;
       }
       const note = store.add(text);
@@ -33,6 +33,24 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+
+    case "search": {
+      const term = rest.join(" ").trim();
+      if (!term) {
+        console.log("Usage: notes search <term>");
+        return;
+      }
+      const results = store.matches(store.all(), term);
+      if (results.length === 0) {
+        console.log("No matching notes found.");
+      } else {
+        for (const note of results) {
+          console.log(`#${note.id}  ${note.text}`);
+        }
+      }
+      break;
+    }
+
     default:
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);

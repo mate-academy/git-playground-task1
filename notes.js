@@ -5,6 +5,9 @@ const config = require("./lib/config");
 const [command, ...rest] = process.argv.slice(2);
 
 function main() {
+
+  console.log("Hello, I am your notes app. You can add, list, and delete notes.");
+  
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();
@@ -36,6 +39,7 @@ function main() {
     default:
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(''); //TODO
   }
 }
 

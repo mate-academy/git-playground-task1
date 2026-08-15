@@ -19,7 +19,7 @@ function main() {
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("No notes yet. Usage: notes add <text>");
         return;
       }
       for (const note of notes) {
@@ -30,7 +30,7 @@ function main() {
     case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      console.log(ok ? `Deleted note #${id}` : `No note #${id} exists`);
       break;
     }
     default:

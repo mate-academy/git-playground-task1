@@ -1,0 +1,1 @@
+Changed 'add' command by adding one additional d letter. Also I think change some text messages here and there.

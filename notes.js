@@ -7,13 +7,13 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
-      if (!text) {
+      const noteText = rest.join(" ").trim();
+      if (!noteText) {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      const note = store.add(noteText);
+      console.log(`Saved note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {

@@ -1,4 +1,4 @@
-## Unit 4 Git playground
+## Unit 4 Git playground - change
 
 A tiny command-line notes tool, used as the practice repo for Unit 4 (Git). The app is a safe sandbox for doing real Git work with Claude. The task below is something you run here with Claude; follow the steps and submit the link it asks for.
 

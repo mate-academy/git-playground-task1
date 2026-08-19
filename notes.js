@@ -2,10 +2,10 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 
-const [command, ...rest] = process.argv.slice(2);
+const [com, ...rest] = process.argv.slice(2);
 
 function main() {
-  switch (command) {
+  switch (com) {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
@@ -19,7 +19,7 @@ function main() {
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("No notes yet. Add one note with: notes add <text>");
         return;
       }
       for (const note of notes) {

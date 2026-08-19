@@ -5,15 +5,15 @@
 const fs = require("fs");
 const path = require("path");
 
-const file = path.join(process.cwd(), "notes.md");
+const newFile = path.join(process.cwd(), "notes.md");
 
-if (!fs.existsSync(file)) {
+if (!fs.existsSync(newFile)) {
   console.error("FAIL  notes.md is missing. Add it with your prediction and Claude's summary, then push again.");
   process.exit(1);
 }
 
-if (fs.readFileSync(file, "utf8").trim().length === 0) {
-  console.error("FAIL  notes.md is empty. Add your prediction and Claude's summary, then push again.");
+if (fs.readFileSync(newFile, "utf8").trim().length === 0) {
+  console.error("Error notes.md is empty. Add your prediction and Claude's summary, then push again.");
   process.exit(1);
 }
 

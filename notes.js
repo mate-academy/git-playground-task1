@@ -16,6 +16,17 @@ function main() {
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
+    case "update": {
+      const id = Number(rest[0]);
+      const newText = rest.slice(1).join(" ").trim();
+      if (!newText) {
+        console.log("Usage: notes update <id> <new text>");
+        return;
+      }
+      const ok = store.update(id, newText);
+      console.log(ok ? `Updated note #${id}` : `No note #${id} found`);
+      break;
+    }
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {

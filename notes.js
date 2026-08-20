@@ -17,7 +17,7 @@ function main() {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const notes = store.add(text);
+      const note = store.add(text);
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }

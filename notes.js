@@ -4,6 +4,11 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+function void()
+{
+
+}
+
 function main() {
   switch (command) {
     case "add": {
@@ -12,7 +17,7 @@ function main() {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
+      const notes = store.add(text);
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }

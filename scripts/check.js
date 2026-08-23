@@ -7,6 +7,11 @@ const path = require("path");
 
 const file = path.join(process.cwd(), "notes.md");
 
+if (file === null) {
+  console.error("FAIL  notes.md is missing. Add it with your prediction and Claude's summary, then push again.");
+  process.exit(1);
+}
+
 if (!fs.existsSync(file)) {
   console.error("FAIL  notes.md is missing. Add it with your prediction and Claude's summary, then push again.");
   process.exit(1);

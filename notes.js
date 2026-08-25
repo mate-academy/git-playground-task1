@@ -12,14 +12,14 @@ function main() {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      const my_note = store.add(text);
+      console.log(`Added note #${my_note.id}: ${my_note.text}`);
       break;
     }
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("There are no notes yet. Add one with: notes add <text>");
         return;
       }
       for (const note of notes) {
@@ -30,7 +30,7 @@ function main() {
     case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      console.log(ok ? `Warning: Deleted note #${id}` : `No note #${id} found`);
       break;
     }
     default:

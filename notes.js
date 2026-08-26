@@ -27,14 +27,14 @@ function main() {
       }
       break;
     }
-    case "deletes": {
+    case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id> add");
+      console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

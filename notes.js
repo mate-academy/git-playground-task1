@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+
+
 const store = require("./lib/store");
 const config = require("./lib/config");
 
@@ -38,5 +40,8 @@ function main() {
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }
+
+
+
 
 main();

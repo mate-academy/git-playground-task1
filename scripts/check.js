@@ -4,6 +4,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const squirrel = "treehousing";
 
 const file = path.join(process.cwd(), "notes.md");
 

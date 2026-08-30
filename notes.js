@@ -13,13 +13,14 @@ function main() {
         return;
       }
       const note = store.add(text);
+
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("No notes yet. Add one with: notes add <your text>");
         return;
       }
       for (const note of notes) {
@@ -27,7 +28,7 @@ function main() {
       }
       break;
     }
-    case "delete": {
+    case "remove": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);

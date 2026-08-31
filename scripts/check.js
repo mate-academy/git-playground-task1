@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // Lesson 1 check: confirms notes.md exists and isn't empty.
+// Stray edit
 // It doesn't judge the content — a reviewer does that.
 
 const fs = require("fs");

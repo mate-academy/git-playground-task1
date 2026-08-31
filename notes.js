@@ -4,6 +4,8 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+
+
 function main() {
   switch (command) {
     case "add": {
@@ -25,6 +27,7 @@ function main() {
       for (const note of notes) {
         console.log(`#${note.id}  ${note.text}`);
       }
+      console.log(`(${store.count()} total)`);
       break;
     }
     case "delete": {

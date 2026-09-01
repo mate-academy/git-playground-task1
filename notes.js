@@ -27,6 +27,22 @@ function main() {
       }
       break;
     }
+    case "search": {
+      const term = rest.join(" ").trim();
+      if (!term) {
+        console.log("Usage: notes search <text>");
+        return;
+      }
+      const matches = store.search(term);
+      if (matches.length === 0) {
+        console.log(`No notes match "${term}"`);
+        return;
+      }
+      for (const note of matches) {
+        console.log(`#${note.id}  ${note.text}`);
+      }
+      break;
+    }
     case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
@@ -34,7 +50,7 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | search <text> | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

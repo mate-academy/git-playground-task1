@@ -2,10 +2,10 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 
-const [command, ...rest] = process.argv.slice(2);
+const [cmd, ...rest] = process.argv.slice(2);
 
 function main() {
-  switch (command) {
+  switch (cmd) {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {

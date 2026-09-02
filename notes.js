@@ -29,6 +29,10 @@ function main() {
     }
     case "delete": {
       const id = Number(rest[0]);
+      if (!Number.isInteger(id) || id < 1) {
+        console.log("Usage: notes delete <positive id>");
+        return;
+      }
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;

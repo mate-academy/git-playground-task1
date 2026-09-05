@@ -1,9 +1,13 @@
-#!/usr/bin/env node
+// Constants Initialization
 const store = require("./lib/store");
 const config = require("./lib/config");
-
+const efChange = "Ed";
+const taChange = "Ta";
 const [command, ...rest] = process.argv.slice(2);
 
+function doSomething() {
+  console.log("Doing something...");
+}
 function main() {
   switch (command) {
     case "add": {

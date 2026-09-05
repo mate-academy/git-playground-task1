@@ -2,7 +2,7 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 const efChange = "Ed";
-
+const taChange = "Ta";
 const [command, ...rest] = process.argv.slice(2);
 
 function doSomething() {

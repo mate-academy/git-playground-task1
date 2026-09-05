@@ -1,5 +1,7 @@
 changed text in readmen and a header
 
+Claude caught the stray change in the package.json file.
+
 
 package.json is the serious one — "bin" was renamed to "bn". This is a typo, not a valid npm field. It silently breaks the package's executable: npm link / npm install -g will no longer install a notes command, since npm ignores the unknown bn key without erroring. The JSON is still syntactically valid, so nothing will complain at you — it just stops working. This should be reverted.
 

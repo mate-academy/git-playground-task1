@@ -2,7 +2,7 @@
 
 A tiny command-line notes tool, used as the practice repo for Unit 4 (Git). The app is a safe sandbox for doing real Git work with Claude. The task below is something you run here with Claude; follow the steps and submit the link it asks for.
 
-### The app
+### The app stuff
 - `node notes.js add <text>` — add a note
 - `node notes.js list` — list all notes
 - `node notes.js delete <id>` — delete a note

@@ -1,9 +1,14 @@
 #!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");
-
+const ef = "ET";
+//Special thanks to me
 const [command, ...rest] = process.argv.slice(2);
 
+function handleExit() {
+  console.log("Exiting...");
+  process.exit(0);
+}
 function main() {
   switch (command) {
     case "add": {

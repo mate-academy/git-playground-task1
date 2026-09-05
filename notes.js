@@ -7,23 +7,23 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
-      if (!text) {
+      const txt = rest.join(" ").trim();
+      if (!txt) {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      const note = store.add(txt);
+      console.log(`Added note #${note.id}: ${note.txt}`);
       break;
     }
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("No notes yet. Add one with: notes add <txt>");
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        console.log(`#${note.id}  ${note.txt}`);
       }
       break;
     }
@@ -34,7 +34,7 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <txt> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

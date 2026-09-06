@@ -29,3 +29,7 @@ Il n'y avait pas de changement « oublié » dans un second fichier cette fois :
 tout est dans `scripts/check.js` et les deux modifications correspondaient à
 ma prédiction. Le seul écart relevé est le caractère incomplet de la
 traduction, que Claude a bien signalé.
+
+
+
+That's the everyday win - instead of parsing a diff yourself, you get a plain-language summary and a second pair of eyes on stray changes.

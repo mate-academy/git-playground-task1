@@ -13,7 +13,7 @@ function main() {
         return;
       }
       const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      console.log(`Added a note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {

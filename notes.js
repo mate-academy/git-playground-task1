@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const store = require("./lib/store");
+const store = require("./lib/store/custom");
 const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);

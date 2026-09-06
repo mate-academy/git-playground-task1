@@ -3,8 +3,10 @@ const store = require("./lib/store");
 const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
+let randomValue = 5
 
 function main() {
+  consol.log("Я в душі не ***, що тут робити. Невже для курсу Пайтон не можна було написати завдання на Пайтон?!!")
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();

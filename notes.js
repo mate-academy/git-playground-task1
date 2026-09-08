@@ -17,10 +17,15 @@ function main() {
       break;
     }
     case "list": {
-      const notes = store.all();
+      let notes = store.all();
       if (notes.length === 0) {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
+      }
+      if (rest.includes("--newest")) {
+        notes = store.sortByDateCreated(notes, "desc");
+      } else if (rest.includes("--oldest")) {
+        notes = store.sortByDateCreated(notes, "asc");
       }
       for (const note of notes) {
         console.log(`#${note.id}  ${note.text}`);
@@ -34,7 +39,7 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list [--newest|--oldest] | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

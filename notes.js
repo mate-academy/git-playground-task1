@@ -29,12 +29,12 @@ function main() {
     }
     case "delete": {
       const id = Number(rest[0]);
-      const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      const ok1 = store.remove(id);
+      console.log(ok1 ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands to run : add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

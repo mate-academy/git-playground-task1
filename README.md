@@ -24,5 +24,5 @@ Goal: instead of reading a diff yourself, have Claude tell you what changed, the
 5. Create a PR against the main repository, not your fork, and submit it.
 
 ### NEW Contents
-1. This is anew Line
+1. This is a new Line
 2. another line

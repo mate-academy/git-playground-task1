@@ -2,8 +2,16 @@
   "name": "notes-cli",
   "version": "1.0.0",
   "description": "A tiny command-line notes tool — practice repo for the Claude Code course Git unit.",
-  "bin": { "notes": "notes.js" },
+  "bin": {
+    "notes": "notes.js"
+  },
   "main": "notes.js",
-  "scripts": { "start": "node notes.js" },
-  "license": "MIT"
+  "scripts": {
+    "start": "node notes.js",
+    "format": "prettier --write \"*.{ts,tsx,js,jsx}\" \"lib/*.{ts,tsx,js,jsx}\" \"scripts/*.{ts,tsx,js,jsx}\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.9.6"
+  }
 }

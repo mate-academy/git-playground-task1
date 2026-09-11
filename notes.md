@@ -1,3 +1,4 @@
+I made a small edit to the help text
 
 lib/store.js
 - Added a new check() function that just returns the string "check".

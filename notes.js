@@ -9,7 +9,7 @@ function main() {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
-        console.log("Usage: notes add <your note>");
+        console.log("Usage: notes add <text>");
         return;
       }
       const note = store.add(text);
@@ -33,8 +33,12 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+    case "count": {
+      console.log(store.all().length);
+      break;
+    }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | delete <id> | count");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

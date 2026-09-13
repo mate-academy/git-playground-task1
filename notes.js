@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const store = require("./lib/store");
+const stored = require("./lib/store");
 const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
@@ -12,13 +12,13 @@ function main() {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
+      const note = stored.add(text);
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {
-      const notes = store.all();
-      if (notes.length === 0) {
+      const notes = stored.all();
+      if (notes.length == 0) {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
       }
@@ -29,8 +29,14 @@ function main() {
     }
     case "delete": {
       const id = Number(rest[0]);
-      const ok = store.remove(id);
+      const ok = stored.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      break;
+    }
+    case "remove": {
+      const id = Number(rest[0]);
+      const ok = stored.remove(id);
+      console.log(ok ? `Removed note #${id}` : `No note #${id} found`);
       break;
     }
     default:

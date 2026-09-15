@@ -32,6 +32,7 @@ function main() {
       const ok = store.remove(id);
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
+      break;
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");

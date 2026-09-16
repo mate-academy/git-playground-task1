@@ -12,3 +12,9 @@ Three files changed:
 
 **Unintended-looking change flagged:** the `lib/store.js` comment edit is the one most likely to be missed in review — it's in a file that wasn't otherwise touched by the config/rename work, and it's easy to overlook a comment-only diff when skimming a PR. It caught the stray change I predicted I might forget.
 
+## Submission details
+
+- Branch: `read-repo`
+- Commit: `811d76d`
+- PR: https://github.com/mate-academy/git-playground-task1/pull/274
+

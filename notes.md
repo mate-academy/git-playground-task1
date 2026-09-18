@@ -1,0 +1,1 @@
+"Cambié el tiempo de sesión en config.js, renombré una variable en store.js, agregué el comando count, y corregí un mensaje de uso."

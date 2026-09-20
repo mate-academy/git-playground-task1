@@ -4,7 +4,7 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
-function main() {
+function mainEntry() {
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();
@@ -35,8 +35,10 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(
+        `(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`,
+      );
   }
 }
 
-main();
+mainEntry();

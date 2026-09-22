@@ -5,7 +5,7 @@ const config = require("./lib/config");
 const [command, ...rest] = process.argv.slice(2);
 
 
-#! The main function
+// The main function
 function main() {
   switch (command) {
     case "add": {

@@ -13,7 +13,7 @@ function main() {
         return;
       }
       const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      console.log(`Added note #${note.id}: ${note.str}`);
       break;
     }
     case "list": {
@@ -23,7 +23,7 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        console.log(`#${note.id}  ${note.str}`);
       }
       break;
     }
@@ -35,7 +35,9 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(
+        `(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`,
+      );
   }
 }
 

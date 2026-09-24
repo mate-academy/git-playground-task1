@@ -4,6 +4,14 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+function printUsage() {
+  console.log("Usage: notes <command> [args]");
+  console.log("Commands:");
+  console.log("  add <text>    Add a new note");
+  console.log("  list          List all notes");
+  console.log("  delete <id>   Delete a note by ID");
+} 
+  
 function main() {
   switch (command) {
     case "add": {
@@ -34,6 +42,7 @@ function main() {
       break;
     }
     default:
+      printUsage();
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }

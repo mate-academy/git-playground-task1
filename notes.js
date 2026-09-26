@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node.js
 const store = require("./lib/store");
 const config = require("./lib/config");
 
@@ -35,7 +35,7 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} 10 minutes of inactivity.)`);
   }
 }
 

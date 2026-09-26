@@ -1,0 +1,3 @@
+notes.js: node.js; 10 minutes of inactivity
+config.js: 10 minutes …
+store.js: "notice changes"

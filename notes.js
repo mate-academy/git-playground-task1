@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");
-
+// ceci est un claude test
 const [command, ...rest] = process.argv.slice(2);
 
 function main() {

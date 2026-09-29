@@ -7,3 +7,6 @@ I have added a comment in the scripts folder, and a console log statement
 - Flagged: check.js is the CI submission script, so the edit probably shouldn't ship; only notes.md is being committed.
 
 Did it catch the stray change? There was no stray change to catch. My prediction matched the diff exactly.
+
+## Success feedback
+That's the everyday win - instead of parsing a diff yourself, you get a plain-language summary and a second pair of eyes on stray changes.

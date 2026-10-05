@@ -23,7 +23,8 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        const status = note.done ? "[x]" : "[ ]";
+        console.log(`${status} #${note.id}  ${note.text}`);
       }
       break;
     }
@@ -33,8 +34,29 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+    case "complete": {
+      const id = Number(rest[0]);
+      if (!Number.isInteger(id)) {
+        console.log("Usage: notes complete <id>");
+        return;
+      }
+      const note = store.setDone(id, true);
+      console.log(note ? `Completed note #${id}` : `No note #${id} found`);
+      break;
+    }
+    case "edit": {
+      const id = Number(rest[0]);
+      const text = rest.slice(1).join(" ").trim();
+      if (!Number.isInteger(id) || !text) {
+        console.log("Usage: notes edit <id> <new text>");
+        return;
+      }
+      const note = store.update(id, text);
+      console.log(note ? `Updated note #${id}: ${note.text}` : `No note #${id} found`);
+      break;
+    }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | complete <id> | edit <id> <text> | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

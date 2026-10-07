@@ -36,6 +36,22 @@ function main() {
     default:
       console.log("Commands: add <text> | list | delete <id>");
   }
+
+
+  # Git changes
+
+## My prediction
+
+I expected that I had made three small changes: I removed one line from `notes.js`, one line from `lib/store.js`, and one line from `lib/config.js`. I also expected that the change in `lib/config.js` would be the easiest one to overlook.
+
+## Claude's summary
+
+Claude identified changes in all three files. It found that one line had been removed from `notes.js`, one line from `lib/store.js`, and one line from `lib/config.js`. It also flagged the change in `lib/config.js` as something worth checking because it could have been an unintended edit.
+
+## Did Claude catch the stray change?
+
+Yes. Claude identified the change in `lib/config.js` that I expected could be easy to overlook.
+
 }
 
 main();

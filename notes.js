@@ -9,7 +9,7 @@ function main() {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
-        console.log("Usage: notes add <your note>");
+        console.log("Usage: notes add <your note> to this line");
         return;
       }
       const note = store.add(text);

@@ -39,4 +39,6 @@ function main() {
   }
 }
 
+console.log("hi there its a string");
+
 main();

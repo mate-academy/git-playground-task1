@@ -7,7 +7,7 @@ const [command, ...rest] = process.argv.slice(2);
 const commands = {
   add() {
     const text = rest.join(" ").trim();
-    if (!text) return console.log("Usage: notes add Data already added to the store.");
+    if (!text) return console.log("Usage: notes add <your note>");
     const note = store.add(text);
     console.log(`Added note #${note.id}: ${note.text}`);
   },

@@ -12,12 +12,12 @@ function main() {
         console.log("Usage: notes add <your note>");
         return;
       }
-      const note = store.add(text);
+      const note = store.addNote(text);
       console.log(`Added note #${note.id}: ${note.text}`);
       break;
     }
     case "list": {
-      const notes = store.all();
+      const notes = store.listAll();
       if (notes.length === 0) {
         console.log("No notes yet. Add one with: notes add <text>");
         return;

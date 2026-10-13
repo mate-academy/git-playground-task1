@@ -13,11 +13,11 @@ function main() {
         return;
       }
       const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      console.log(`Added note -> #${note.id}: ${note.text}`);
       break;
     }
     case "list": {
-      const notes = store.all();
+      const notes = store.get_all();
       if (notes.length === 0) {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
@@ -38,5 +38,8 @@ function main() {
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }
+
+function test()
+{}
 
 main();

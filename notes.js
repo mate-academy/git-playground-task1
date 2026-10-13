@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Kodree Git exercise - testing change detection
 const store = require("./lib/store");
 const config = require("./lib/config");
 

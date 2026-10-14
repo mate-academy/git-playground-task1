@@ -7,6 +7,7 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
+      console.log("Hello world!");
       const text = rest.join(" ").trim();
       if (!text) {
         console.log("Usage: notes add <your note>");

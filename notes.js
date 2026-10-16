@@ -19,7 +19,7 @@ function main() {
     case "list": {
       const notes = store.all();
       if (notes.length === 0) {
-        console.log("No notes yet. Add one with: notes add <text>");
+        console.log("No notes yet. Add one with: notes add the text of your note");
         return;
       }
       for (const note of notes) {
@@ -34,7 +34,7 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add the text provided | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

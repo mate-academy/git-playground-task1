@@ -2,7 +2,7 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 
-const [command, ...rest] = process.argv.slice(2);
+const [command,...rest] = process.argv.slice(2);
 
 function main() {
   switch (command) {
@@ -23,18 +23,23 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        console.log(`#${note.id} ${note.text}`);
       }
       break;
     }
     case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      console.log(ok? `Deleted note #${id}` : `No note #${id} found`);
+      break;
+    }
+    case "count": {
+      const notes = store.all();
+      console.log(`You have ${notes.length} note(s).`);
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | count | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

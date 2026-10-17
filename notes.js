@@ -22,6 +22,7 @@ function main() {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
       }
+      console.log(`Total notes: ${store.count()}`);
       for (const note of notes) {
         console.log(`#${note.id}  ${note.text}`);
       }

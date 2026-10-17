@@ -13,3 +13,7 @@ You have uncommitted changes on main. They add an edit command to the notes tool
 Bug: store.edit doesn't handle an ID that doesn't exist. find returns undefined, so note.text = text throws a TypeError. delete handles a missing ID cleanly. edit should return null or false in that case, and notes.js should print "No note #N found".
 
 I can fix that, and commit if you want.
+
+
+### After first commit
+I have fixed the edit function by handling non matched ID.

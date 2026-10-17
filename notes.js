@@ -43,7 +43,7 @@ function main() {
       }
 
       const note = store.edit(id, text);
-      console.log(`Edited note #${note.id}: ${note.text}`);
+      console.log(!!note ? `Edited note #${note.id}: ${note.text}` : 'No note #${id} found');
       break;
     }
     default:

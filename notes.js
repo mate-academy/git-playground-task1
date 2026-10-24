@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const store = require("./lib/store");
 const config = require("./lib/config");
-
+const ma-variable = require("./lib/store");
 const [command, ...rest] = process.argv.slice(2);
 
 function main() {

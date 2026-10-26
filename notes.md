@@ -1,6 +1,6 @@
 ## My prediction
 
-_(TODO: one line, from memory, of what I changed.)_
+zmieniłem timeout i dodałem funkcje deleteall
 
 ## Claude's summary
 
@@ -19,4 +19,4 @@ Flagged as possibly unintended:
 
 ## Did Claude catch the stray change?
 
-_(TODO: yes/no — the timeout change was flagged as the likely stray edit.)_
+Claude wychwycił niezamierzoną zmianę (timeout)

@@ -4,16 +4,27 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+// Returns the id as a positive integer, or null if it isn't a valid id.
+function parseId(value) {
+  const id = Number(value);
+  return Number.isInteger(id) && id > 0 ? id : null;
+}
+
+// Returns true if the note text contains something other than whitespace.
+function isValidText(text) {
+  return typeof text === "string" && text.trim().length > 0;
+}
+
 function main() {
   switch (command) {
     case "add": {
       const text = rest.join(" ").trim();
-      if (!text) {
+      if (!isValidText(text)) {
         console.log("Usage: notes add <your note>");
         return;
       }
       const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      console.log(`Added note #${note.id}: "${note.text}" (run "notes list" to see all notes)`);
       break;
     }
     case "list": {
@@ -28,9 +39,13 @@ function main() {
       break;
     }
     case "delete": {
-      const id = Number(rest[0]);
+      const id = parseId(rest[0]);
+      if (id === null) {
+        console.log("Usage: notes delete <id>");
+        return;
+      }
       const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      console.log(ok ? `Deleted note #${id}` : `No note #${id} found. Run "notes list" to see ids.`);
       break;
     }
     default:

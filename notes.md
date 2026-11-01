@@ -1,0 +1,1 @@
+created CLAUDE.md file to identify the repo and provide guidance to Claude Code. Added console.log statements to lib/store.js to log when notes are loaded and saved.

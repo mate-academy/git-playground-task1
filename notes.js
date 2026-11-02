@@ -4,6 +4,9 @@ const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
 
+/**
+ * Main function to handle command-line arguments and execute the appropriate action
+ */
 function main() {
   switch (command) {
     case "add": {

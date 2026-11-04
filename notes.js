@@ -27,11 +27,13 @@ function main() {
       }
       break;
     }
-    case "delete": {
+       case "delete": {
       const id = Number(rest[0]);
+      if (!Number.isInteger(id) || id < 1) {
+        console.log("Usage: notes delete <id>   (example: notes delete 3)");
+        return;
+      }
       const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
-      break;
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");

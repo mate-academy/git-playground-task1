@@ -17,13 +17,14 @@ function main() {
       break;
     }
     case "list": {
-      const notes = store.all();
-      if (notes.length === 0) {
+      const savedNotes = store.all();
+      if (savedNotes.length === 0) {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
       }
-      for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+      //test
+      for (const note of savedNotes) {
+        console.log(formatNote(note));
       }
       break;
     }
@@ -37,6 +38,10 @@ function main() {
       console.log("Commands: add <text> | list | delete <id>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
+}
+
+function formatNote(note) {
+  return `#${note.id}  ${note.text}`;
 }
 
 main();

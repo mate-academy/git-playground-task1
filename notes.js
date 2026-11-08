@@ -22,6 +22,7 @@ function main() {
         console.log("No notes yet. Add one with: notes add <text>");
         return;
       }
+      console.log(`You have ${notes.length} note(s):`);
       for (const note of notes) {
         console.log(`#${note.id}  ${note.text}`);
       }
@@ -34,7 +35,7 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Usage: notes <add <text> | list | delete <id>>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

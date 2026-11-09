@@ -9,7 +9,7 @@ function main() {
     case "add": {
       const text = rest.join(" ").trim();
       if (!text) {
-        console.log("Usage: notes add <your note>");
+        console.log("Usage: notes add <my note>");
         return;
       }
       const note = store.add(text);
@@ -38,5 +38,7 @@ function main() {
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }
-
+  function countNotes(notes) {
+    return notes.length;
+  }
 main();

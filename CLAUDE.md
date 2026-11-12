@@ -18,7 +18,7 @@ No dependencies, no build step, no lint, and no test suite. Node 22 is what CI u
 
 ## Gotchas
 
-- `lib/config.js` defines `SESSION_TIMEOUT_MINUTES`, and the usage message in `notes.js` mentions that the session locks after that many minutes. No code implements locking or reads the timeout, so that message describes behavior that does not exist.
+- `lib/config.js` defines `SESSION_TIMEOUT_UNUSED`, and the usage message in `notes.js` mentions that the session locks after that many minutes. No code implements locking or reads the timeout, so that message describes behavior that does not exist.
 - `delete` converts its argument with `Number(...)`. A non-numeric id becomes `NaN` and prints "No note #NaN found" rather than a usage error.
 - `notes.json` is gitignored and is created on first `add`. Don't commit it.
 - Modules use CommonJS (`require` / `module.exports`), not ES modules.

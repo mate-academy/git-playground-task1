@@ -29,3 +29,5 @@ Minor: Git warns that LF will become CRLF in both modified files. This is a Wind
 
 Conclusions
 Claude correctly identified the unintended change.
+
+PR: https://github.com/mate-academy/git-playground-task1/pull/469

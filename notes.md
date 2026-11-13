@@ -5,7 +5,7 @@ I predict that Claude will identify the new function, the variable rename, and t
 
   Ran 1 shell command
 
-You have three uncommitted changes on add-username-and-eslint.
+You have three uncommitted changes on read-repo.
 
 1. lib/config.js: SESSION_EXPIRY_MINS changed from 13 to 12
 - This is probably the unintended one. The last commit (8438384) deliberately changed it from 15 to 13, and this edit moves it one minute further.

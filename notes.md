@@ -18,3 +18,4 @@ Nothing is staged.
 If neither change was on purpose, you can undo both with git restore notes.js && rm notes.md. I haven't run this.
 
 Reflection: Yes, Claude caught the stray change. It flagged the blank line added at notes.js:19 as likely unintended, since no other case in the switch has a blank line between them.
+My comment

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const os = require("os");
 const store = require("./lib/store");
 const config = require("./lib/config");
 
@@ -7,13 +8,20 @@ const [command, ...rest] = process.argv.slice(2);
 function main() {
   switch (command) {
     case "add": {
-      const text = rest.join(" ").trim();
-      if (!text) {
-        console.log("Usage: notes add <your note>");
+      const args = [...rest];
+      let user = os.userInfo().username;
+      const flag = args.indexOf("--user");
+      if (flag !== -1) {
+        user = (args[flag + 1] || "").trim();
+        args.splice(flag, 2);
+      }
+      const text = args.join(" ").trim();
+      if (!text || !user) {
+        console.log("Usage: notes add [--user <name>] <your note>");
         return;
       }
-      const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      const note = store.add(text, user);
+      console.log(`Added note #${note.id} by ${note.user}: ${note.text}`);
       break;
     }
     case "list": {
@@ -23,7 +31,8 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        const by = note.user ? ` (${note.user})` : "";
+        console.log(`#${note.id}${by}  ${note.text}`);
       }
       break;
     }
@@ -34,8 +43,8 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log("Commands: add [--user <name>] <text> | list | delete <id>");
+      console.log(`(Session locks after ${config.SESSION_EXPIRY_MINS} minutes of inactivity.)`);
   }
 }
 

@@ -14,3 +14,6 @@ Prediction: I changed a message in notes.js and added a countNotes function in s
 2. The usage message lost the colon after "Usage" and has a stray space before the new one (`Usage bruno : …`).
 3. The "bruno" edits look like test changes rather than deliberate wording.
 4. The prediction says one message changed, but three did.
+
+Result: Claude caught the stray change in lib/config.js and flagged it as possibly unintended.
+

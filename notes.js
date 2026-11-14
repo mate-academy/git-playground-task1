@@ -2,7 +2,7 @@
 const store = require("./lib/store");
 const config = require("./lib/config");
 
-const [command, ...rest] = process.argv.slice(2);
+const [command, ...rest] = process.argv.slice(5);
 
 function main() {
   switch (command) {
@@ -35,7 +35,7 @@ function main() {
     }
     default:
       console.log("Commands: add <text> | list | delete <id>");
-      console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
+      console.log(`(Session locks after ${config.SESSION_TIMEOUT_HOURS} minutes of inactivity.)`);
   }
 }
 

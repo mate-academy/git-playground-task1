@@ -21,3 +21,7 @@ Vérifié en exécutant `node notes.js list`, `node notes.js add hello` et `node
 ## Claude a-t-il repéré le changement parasite ?
 
 Il n'y a pas de changement dans un second fichier : les 2 changements sont dans `notes.js`. Claude a donc retrouvé exactement les 2 changements annoncés dans ma prédiction, et a signalé que les deux sont des bugs probables plutôt que des modifications voulues.
+
+## Corrections après la review
+
+Le reviewer a demandé de remettre `process.argv.slice(2)`. J'ai fait cette correction, et j'ai aussi remis `config.SESSION_TIMEOUT_MINUTES` dans le message par défaut (`SESSION_TIMEOUT_HOURS` n'existe pas). Vérifié : `node notes.js add hello` ajoute bien la note, `list` l'affiche et `delete` la supprime.

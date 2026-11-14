@@ -1,3 +1,5 @@
+# my prediction
+Yes Claude caught the tray change
 # notes
 
 A small command-line tool for keeping plain-text notes. Notes are saved to `notes.json` in the project root.

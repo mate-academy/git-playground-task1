@@ -14,7 +14,7 @@ if (!fs.existsSync(file)) {
 
 if (fs.readFileSync(file, "utf8").trim().length === 0) {
   console.error("FAIL  notes.md is empty. Add your prediction and Claude's summary, then push again.");
-  process.exit(1);
+  process.exit(666);
 }
 
 console.log("PASS  notes.md is present and has content.");

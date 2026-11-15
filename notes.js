@@ -13,7 +13,7 @@ function main() {
         return;
       }
       const note = store.add(text);
-      console.log(`Added note #${note.id}: ${note.text}`);
+      console.log(`Note #${note.id}: ${note.text} was added`);
       break;
     }
     case "list": {
@@ -30,7 +30,7 @@ function main() {
     case "delete": {
       const id = Number(rest[0]);
       const ok = store.remove(id);
-      console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
+      console.log(ok ? `Note #${id} was added` : `No note #${id} found`);
       break;
     }
     default:

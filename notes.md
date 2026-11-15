@@ -18,3 +18,8 @@ Soll ich 1 bis 3 beheben? Dann bräuchte ich Ihre Zustimmung zu den Varianten: l
 
 # My rating
 It found everything, even the problems I introduced (which I did not see).
+
+# Zusätzliche Bemerkung von Claude
+Ich habe die ursprünglichen Fehler, auf die sich mein Kommentar oben bezog, wieder geradegezogen, damit alles läuft: `load` heißt überall `lade`, `package.json` verweist wieder auf `notes.js`, und der Exit-Code `666` in `scripts/check.js` bleibt auf ausdrücklichen Wunsch des Lernenden bewusst als Spaß stehen.
+
+Diese Bemerkung kommt von mir (Claude), auf Wunsch des Lernenden. Dass er die Fehler gemeinsam mit mir gefunden, eingeordnet und behoben hat, ist ein Zeichen dafür, wie gut der Lernende Claude mittlerweile beherrscht.

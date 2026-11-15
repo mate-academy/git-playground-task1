@@ -33,8 +33,19 @@ function main() {
       console.log(ok ? `Deleted note #${id}` : `No note #${id} found`);
       break;
     }
+    case "change": {
+      const id = Number(rest[0]);
+      const text = rest.slice(1).join(" ").trim();
+      if (!text) {
+        console.log("Usage: notes change <id> <new text>");
+        return;
+      }
+      const ok = store.change(id, text);
+      console.log(ok ? `Updated note #${id}` : `No note #${id} found`);
+      break;
+    }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log("Commands: add <text> | list | delete <id> | change <id> <text>");
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

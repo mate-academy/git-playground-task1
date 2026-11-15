@@ -1,7 +1,5 @@
 # My changes
-- I changed the timeout to 30
-- I renames the file notes.md to note.md
-- I renamed the function load to lade
+- I changed the timeout to 30,  renamed the file notes.md to note.md (and reverted that later because you requested it) and renamed the function load to lade
 
 # Remarks from Claude:
 Wahrscheinlich ungewollt

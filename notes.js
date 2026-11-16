@@ -3,7 +3,6 @@ const store = require("./lib/store");
 const config = require("./lib/config");
 
 const [command, ...rest] = process.argv.slice(2);
-
 function main() {
   switch (command) {
     case "add": {
@@ -14,6 +13,7 @@ function main() {
       }
       const note = store.add(text);
       console.log(`Added note #${note.id}: ${note.text}`);
+      console.log(`Claude passed from here`);
       break;
     }
     case "list": {

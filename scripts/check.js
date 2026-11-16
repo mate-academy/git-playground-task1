@@ -18,3 +18,7 @@ if (fs.readFileSync(file, "utf8").trim().length === 0) {
 }
 
 console.log("PASS  notes.md is present and has content.");
+
+function sum(a, b) {
+  return a+b
+}

@@ -1,4 +1,4 @@
-I added a 6th clause in the README. file. It will not make any difference
+I added an extra numbered item to the README.md file. It will not make any difference
 
 
 

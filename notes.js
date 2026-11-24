@@ -23,7 +23,7 @@ function main() {
         return;
       }
       for (const note of notes) {
-        console.log(`#${note.id}  ${note.text}`);
+        console.log(`#${note.id} ${note.text}`);
       }
       break;
     }

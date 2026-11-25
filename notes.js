@@ -14,6 +14,7 @@ function main() {
       }
       const note = store.add(text);
       console.log(`Added note #${note.id}: ${note.text}`);
+      console.log("Confirmation: Claude caught the stray change (the unintended backtick edit to the usage line).");
       break;
     }
     case "list": {
@@ -34,7 +35,8 @@ function main() {
       break;
     }
     default:
-      console.log("Commands: add <text> | list | delete <id>");
+      console.log(`Unknown command: ${command}`);
+      console.log(`Commands: add <text> | list | delete <id>`);
       console.log(`(Session locks after ${config.SESSION_TIMEOUT_MINUTES} minutes of inactivity.)`);
   }
 }

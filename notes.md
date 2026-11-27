@@ -26,3 +26,5 @@ Things that look unintended
 - lib/helpers.js is unused. Your note calls it an example, so it may be intentional. Confirm before committing it.
 
 I haven't changed any files. I can fix store.js by using FILENAME on lines 8 and 15, or by renaming it back to FILE. Tell me which you prefer.
+
+Claude caught the stray change: it identified lib/helpers.js as unused and flagged it for confirmation.

@@ -1,4 +1,5 @@
 # Changes since the last commit
+I predicted that lib/store.js was edited and a helper file was added.
 
 The last commit is `cf8666d`, titled "Update README.md". Since then, two things have changed in the project.
 
